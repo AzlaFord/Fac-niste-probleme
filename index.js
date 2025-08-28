@@ -131,3 +131,44 @@ function diference(arr){
 }
 
 console.log(diference([35,78,30,200,42]))
+
+function monstFrequent(arr){
+    let k 
+    let count=0
+    for(let i =0; i<arr.length;i++){
+        let num = arr[i]
+        let countinterior =0
+        for(let j =0 ;j<arr.length;j++){
+            if(num == arr[j]){
+                countinterior++
+                if(countinterior> count){
+                    count = countinterior
+                    k = num
+                }
+            }
+        }
+    }
+    return [k,count]
+}
+console.log(monstFrequent([1,2,3,2,5,2,5]))
+
+function noDubl(arr){
+    let result =[]
+    let index = 0
+    for (let i = 0;i<arr.length;i++){
+        let exists = false
+        for(let j =0;j<index;j++){
+            if(arr[i] == result[j]){
+                exists= true
+            }
+        }
+        if(!exists){
+            result[index] = arr[i]
+            index++
+        }
+    }
+    return result
+
+}
+
+console.log(noDubl([45,30,45,35,67,35,30,89,90,35]))

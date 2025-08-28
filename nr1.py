@@ -66,3 +66,16 @@ def thirdMax(arr):
     return arr2    
 
 print(thirdMax([3,4,5,8,9,1,2,7,10,0]))
+
+def removeDublications(arr):
+    result = []
+    for i in range(len(arr)):
+        exists = False
+        for j in range(len(result)):
+            if arr[i] == result[j]:
+                exists=True
+        if not exists :
+            result.append(arr[i])
+    return result
+
+print(removeDublications([45,30,45,35,67,35,30,89,90,35]))
