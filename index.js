@@ -65,3 +65,24 @@ function thirdMinOdd(arr){
     return min
 }
 console.log(thirdMinOdd([3,5,1,8,9,2,7,10,11,0]))
+
+function thirdMaxEven(arr){
+    max = [-Infinity,-Infinity,-Infinity]
+    for(let i = 0 ; i<arr.length;i++){
+        if(arr[i] %2 == 0){
+            if(max[0] < arr[i]){
+                max[2] = max[1]
+                max[1] = max[0]
+                max[0] = arr[i]
+            }else if(arr[i]>max[1] && max[1] <max[0]){
+                max[2] = max[1]
+                max[1] = arr[i]
+            }else if(arr[i]>max[2] && max[2]<max[1]){
+                max[2] = arr[i]
+            }
+        }
+    }
+    return max
+}
+
+console.log(thirdMaxEven([3,5,1,8,9,2,7,10,13]))
