@@ -103,3 +103,31 @@ function maxOddAndEven(arr){
     return [maxEven,maxOdd]
 }
 console.log(maxOddAndEven([3,5,1,8,9,2,7,10,13]))
+
+function diapazon(arr,start,end){
+    let sum = 0
+    for(let i = 0 ;i<arr.length;i++){
+        if(arr[i] >= start && arr[i]<=end){
+            sum+=arr[i]
+        }
+    }
+    return sum
+}
+
+console.log(diapazon([2,-1,6,4,-3,7,-2,0,9,2],-2,4))
+
+function diference(arr){
+    max = -Infinity
+    min = Infinity
+    for(let i = 0 ; i<arr.length;i++){
+        if(arr[i] < min){
+            min = arr[i]
+        }
+        if(arr[i]>max){
+            max= arr[i]
+        }
+    }
+    return max-min
+}
+
+console.log(diference([35,78,30,200,42]))
