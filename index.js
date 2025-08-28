@@ -86,3 +86,20 @@ function thirdMaxEven(arr){
 }
 
 console.log(thirdMaxEven([3,5,1,8,9,2,7,10,13]))
+
+function maxOddAndEven(arr){
+    let maxEven = -Infinity
+    let maxOdd = -Infinity
+    for(let j = 0 ;j<arr.length;j++){
+        if(arr[j]%2==0 && maxEven < arr[j]){
+            maxEven = arr[j]
+        }
+    }
+    for(let i = 0 ;i<arr.length;i++){
+        if(arr[i]%2!=0 && arr[i] >maxOdd && arr[i] <maxEven){
+            maxOdd = arr[i]
+        }
+    }
+    return [maxEven,maxOdd]
+}
+console.log(maxOddAndEven([3,5,1,8,9,2,7,10,13]))
