@@ -154,21 +154,87 @@ console.log(monstFrequent([1,2,3,2,5,2,5]))
 
 function noDubl(arr){
     let result =[]
+    let count = []
     let index = 0
     for (let i = 0;i<arr.length;i++){
         let exists = false
         for(let j =0;j<index;j++){
             if(arr[i] == result[j]){
                 exists= true
+                count[j]++
             }
         }
         if(!exists){
             result[index] = arr[i]
+            count[index] = 1
             index++
         }
     }
-    return result
+    for (let i = 0; i < count.length - 1; i++) {
+        for (let j = 0; j < count.length - i - 1; j++) {
+            if (count[j] < count[j + 1]) { // schimbă sensul comparației
+                // schimbăm count
+                let tempCnt = count[j];
+                count[j] = count[j + 1];
+                count[j + 1] = tempCnt;
 
+                // schimbăm și valorile din result
+                let tempVal = result[j];
+                result[j] = result[j + 1];
+                result[j + 1] = tempVal;
+            }
+        }
+    }
+
+    return [result, count];
 }
 
 console.log(noDubl([45,30,45,35,67,35,30,89,90,35]))
+
+
+function twoSum(arr, num) {
+    let result = [];
+    let index = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) { // începe de la i+1
+            if (arr[i] + arr[j] === num) {
+                result[index] = [i+1, j+1];
+                index++;
+            }
+        }
+    }
+
+    return result;
+}
+
+console.log(twoSum([4, 2, 3, 5, 1, 3, 8], 6));
+
+function twoSum2(arr,num){
+    let index = 0
+    let result = []
+    for(let i =0 ; i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[i] + arr[j] === num){
+                result[index] = [i,j]
+                index++
+            }
+        }
+    }
+    return result
+}
+console.log(twoSum2([4, 2, 3, 5, 1, 3, 8], 6));
+
+function twoSum3(arr,num){
+    let index = 0
+    let result = []
+    for(let i = 0 ;i<arr.length;i++){
+        for(let j = i+1;j<arr.length;j++){
+            if(arr[i] + arr[j] === num){
+                result[index] = [i,j]
+                index++
+            }
+        }
+    }
+    return result
+}
+console.log(twoSum3([4, 2, 3, 5, 1, 3, 8], 6));
