@@ -257,62 +257,112 @@ function closestToZero(arr){
 
 console.log(closestToZero([8,3,1,9,-4,7,10,3,9]))
 
-function closestToZero2(arr){
-    let result = []
-    let closestSum = Infinity
-    for(let i = 0;i<arr.length;i++){
-        for(let j = i+1;j<arr.length;j++){
-            let sum = arr[i] + arr[j]
-            if(Math.abs(sum) < Math.abs(closestSum)){
-                closestSum = sum
-                result = [arr[i], arr[j]]
-            }
-        }
-    }
-    return result
-}
-console.log(closestToZero2([8,3,1,9,-4,7,10,3,9]))
+// function closestToZero2(arr){
+//     let result = []
+//     let closestSum = Infinity
+//     for(let i = 0;i<arr.length;i++){
+//         for(let j = i+1;j<arr.length;j++){
+//             let sum = arr[i] + arr[j]
+//             if(Math.abs(sum) < Math.abs(closestSum)){
+//                 closestSum = sum
+//                 result = [arr[i], arr[j]]
+//             }
+//         }
+//     }
+//     return result
+// }
+// console.log(closestToZero2([8,3,1,9,-4,7,10,3,9]))
 
-function closesttozero3(arr){
-    let result = []
-    let closestSum = Infinity
-    for(let i =0;i<arr.length;i++){
-        for(let j = i+1;j<arr.length;j++){
-            let sum = arr[i] + arr[j]
-            if(Math.abs(sum) < Math.abs(closestSum)){
-                closestSum = sum
-                result = [arr[i],arr[j]]
-            }
-        }
-    }
-    return result
-}
+// function closesttozero3(arr){
+//     let result = []
+//     let closestSum = Infinity
+//     for(let i =0;i<arr.length;i++){
+//         for(let j = i+1;j<arr.length;j++){
+//             let sum = arr[i] + arr[j]
+//             if(Math.abs(sum) < Math.abs(closestSum)){
+//                 closestSum = sum
+//                 result = [arr[i],arr[j]]
+//             }
+//         }
+//     }
+//     return result
+// }
 
-console.log(closestToZero2([8,3,1,9,-4,7,10,3,9]))
+// console.log(closestToZero2([8,3,1,9,-4,7,10,3,9]))
 
-function close0(arr){
-    let result = []
-    let closesum = Infinity
-    for(let i = 0;i<arr.length;i++){
-        for(let j = i+1;j<arr.length;j++){
-            let sum = arr[i] + arr[j]
-            if(Math.abs(sum) < Math.abs(closesum)){
-                closesum = sum
-                result = [arr[i],arr[j]]
-            }
-        }
-    }
-    return result
-}
+// function close0(arr){
+//     let result = []
+//     let closesum = Infinity
+//     for(let i = 0;i<arr.length;i++){
+//         for(let j = i+1;j<arr.length;j++){
+//             let sum = arr[i] + arr[j]
+//             if(Math.abs(sum) < Math.abs(closesum)){
+//                 closesum = sum
+//                 result = [arr[i],arr[j]]
+//             }
+//         }
+//     }
+//     return result
+// }
 
-console.log(close0([8,3,1,9,-4,7,10,3,9]))
+// console.log(close0([8,3,1,9,-4,7,10,3,9]))
 
 
 // deci pril lucru fac un result si o variaibla care sotcheaza temporar  suma cea mai aorpope de 0 dupa fac 2 forloopuri si al doilea incepe cu o interatie peste prima screz o varaibila suma care va faci primul numa din primul for loop + al doilea nr din aldoilea foor lop sa se calculeze o suma se verifica cu Math.abs in coparatie cu closes sum care e tot in math abs si daca e mai mica  ca curentasum atunci se schimba valoarea cam atat
 
+function deleteNumber(arr,num){
+    let k = arr.length
+    let found = false
+    for(let i = 0 ; i<k;i++){
+        if(arr[i] === num && !found ){
+            found = true
+        }
+        if(found){
+            arr[i] = arr[i + 1];
+        }
+    }
+    if (found) {
+        arr.length--
+    }
+    return arr
+}
+
+console.log(deleteNumber([35,30,89,76,155,123],76))
+
+function deleteNumb(arr,num){
+    let found = false
+    for(let i =0 ;i<arr.length;i++){
+        if(arr[i] === num && !found){
+            found = true
+        }
+        if(found){
+            arr[i] = arr[i+1]
+        }
+    }
+    if(found){
+        arr.length--
+    }
+    return arr
+}
+console.log(deleteNumb([35,30,89,76,155,123],155))
 
 
+function deleteNum(arr,num){
+    let found = false
+    for(let i =0 ;i<arr.length;i++){
+        if(arr[i] === num && !found){
+            found = true
+        }
+        if(found){
+            arr[i] = arr[i +1]
+        }
+    }
+    if(found){
+        arr.length--
+    }
+    return arr
+}
+console.log(deleteNum([35,30,89,76,155,123],35))
 
-
-
+// deci in problema asta trebuie de facut o variabila boolean cu valaorea false ianfara cilculuio for iar in cilu vom veririfca fiecare iteratie cu num daca e egal cu numarul dorit de ster daca da setam found ca true iar dupa daca found e true vor face ca fiecare inetratie de arr sa fie egala cu urmatoarea la iseriea din bucla for vom face inca o verificare la found ca e  adevarat atunci vom scade marimea la array cu -1 arr.length -1
 
