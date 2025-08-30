@@ -366,3 +366,100 @@ console.log(deleteNum([35,30,89,76,155,123],35))
 
 // deci in problema asta trebuie de facut o variabila boolean cu valaorea false ianfara cilculuio for iar in cilu vom veririfca fiecare iteratie cu num daca e egal cu numarul dorit de ster daca da setam found ca true iar dupa daca found e true vor face ca fiecare inetratie de arr sa fie egala cu urmatoarea la iseriea din bucla for vom face inca o verificare la found ca e  adevarat atunci vom scade marimea la array cu -1 arr.length -1
 
+function addNumber(arr,loc,num){
+    arr.length++
+    for(let i=arr.length-1;i>loc;i--){
+        arr[i] = arr[i-1]
+    }
+    arr[loc] = num
+    return arr
+}
+
+console.log(addNumber([54,2,6,7,8,65,21,91],4,23))
+
+
+// deci in pirmul rand trebuie sa crestem marimea arayului dupa sa parcurgem invers arrayul din marimi lui -1 pana cand i nu mai e mai mare ca locul sau poztia un detrebuie inserat numarul atat timip cand condita e adevarat arayul se va trage la o interarie in urma deci locul unde e arr[i] = cu arr[i-1]
+// din cauza ca arayul e cu unu mai mare si se scare dupa facem arr[loc] = numar si returnam arayul
+
+function noDublures(arr){
+    let index = 0
+    let result = []
+    for(let i = 0;i<arr.length;i++){
+        let exists = false
+        for(let j=0;j<index;j++){
+            if(arr[i] === result[j]){
+                exists = true
+            }
+        }
+    if(!exists){
+        result[index]=arr[i]
+        index++
+    }
+    }
+    arr = result
+    return ['a mers ',arr]
+}
+
+console.log(noDublures([2,3,1,2,4,3,1,2,1,3,1,3,4]))
+
+function reuniunea(arr,arr2){
+    let result =[]
+    let index = 0
+    let k = arr2.length
+    for(let i =0;i<arr.length;i++){
+          arr2[k+i] = arr[i]
+    }
+    for(let i = 0;i<arr2.length;i++){
+        let exists = false
+        for(let j =0 ;j<index;j++){
+            if( arr2[i] === result[j]){
+                exists = true
+            }
+        }
+        if(!exists){
+            result[index] = arr2[i]
+            index++
+        }
+    }
+    return result
+}
+console.log(reuniunea([2,3,1,7],[3,5,8,2,4,6]))
+
+
+
+
+function intersectia(arr,arr2){
+    let result = []
+    let index = 0
+    for(let i = 0 ;i<arr.length;i++ ){
+        for(let j =0;j<arr.length;j++){
+            if(arr[i] == arr2[j]){
+                result[index]=arr[i]
+                index++
+            }
+        }
+    }
+    return result
+}
+console.log(intersectia([2,3,1,7],[3,5,8,2,4,6]))
+
+
+function multimi(arr,arr2){
+    let result = []
+    let index = 0
+    for(let i =0 ;i<arr.length;i++){
+        let exists = false
+        for(let j=0;j<arr2.length;j++){
+            if(arr[i] == arr2[j]){
+                exists=true
+                break
+            }
+        }
+        if(!exists){
+            result[index]=arr[i]
+            index++
+        }
+    }
+    return result
+}
+console.log(multimi([2,3,1,7],[3,5,8,2,4,6]))
