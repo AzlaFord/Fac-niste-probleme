@@ -238,3 +238,81 @@ function twoSum3(arr,num){
     return result
 }
 console.log(twoSum3([4, 2, 3, 5, 1, 3, 8], 6));
+
+function closestToZero(arr){
+    let closestsum = Infinity
+    let result = []
+    for(let i =0 ;i <arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            let sum = arr[i] + arr[j]
+            if(Math.abs(sum) < Math.abs(closestsum)){
+                closestsum = sum
+                console.log(closestsum)
+                result = [arr[i], arr[j]];
+            }
+        }
+    }
+    return result
+}
+
+console.log(closestToZero([8,3,1,9,-4,7,10,3,9]))
+
+function closestToZero2(arr){
+    let result = []
+    let closestSum = Infinity
+    for(let i = 0;i<arr.length;i++){
+        for(let j = i+1;j<arr.length;j++){
+            let sum = arr[i] + arr[j]
+            if(Math.abs(sum) < Math.abs(closestSum)){
+                closestSum = sum
+                result = [arr[i], arr[j]]
+            }
+        }
+    }
+    return result
+}
+console.log(closestToZero2([8,3,1,9,-4,7,10,3,9]))
+
+function closesttozero3(arr){
+    let result = []
+    let closestSum = Infinity
+    for(let i =0;i<arr.length;i++){
+        for(let j = i+1;j<arr.length;j++){
+            let sum = arr[i] + arr[j]
+            if(Math.abs(sum) < Math.abs(closestSum)){
+                closestSum = sum
+                result = [arr[i],arr[j]]
+            }
+        }
+    }
+    return result
+}
+
+console.log(closestToZero2([8,3,1,9,-4,7,10,3,9]))
+
+function close0(arr){
+    let result = []
+    let closesum = Infinity
+    for(let i = 0;i<arr.length;i++){
+        for(let j = i+1;j<arr.length;j++){
+            let sum = arr[i] + arr[j]
+            if(Math.abs(sum) < Math.abs(closesum)){
+                closesum = sum
+                result = [arr[i],arr[j]]
+            }
+        }
+    }
+    return result
+}
+
+console.log(close0([8,3,1,9,-4,7,10,3,9]))
+
+
+// deci pril lucru fac un result si o variaibla care sotcheaza temporar  suma cea mai aorpope de 0 dupa fac 2 forloopuri si al doilea incepe cu o interatie peste prima screz o varaibila suma care va faci primul numa din primul for loop + al doilea nr din aldoilea foor lop sa se calculeze o suma se verifica cu Math.abs in coparatie cu closes sum care e tot in math abs si daca e mai mica  ca curentasum atunci se schimba valoarea cam atat
+
+
+
+
+
+
+
