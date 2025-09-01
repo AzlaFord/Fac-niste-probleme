@@ -730,3 +730,66 @@ const matrice2 = [
                 [16,17,18,19,20]]
 
 console.log(liniiMediane(matrice2))
+
+
+function coloanaVerticalaMediana(arr) {
+    let n = arr.length      
+    let m = arr[0].length   
+    let result = []
+
+    if (m % 2 === 1) {
+        let col = (m - 1) / 2;
+        for (let i = 0; i < n; i++) {
+            result.push(arr[i][col])
+        }
+    } else {
+        let col1 = m / 2 - 1
+        let col2 = m / 2
+        for (let i = 0; i < n; i++) {
+            result.push(arr[i][col1])
+        }
+        for (let i = 0; i < n; i++) {
+            result.push(arr[i][col2])
+        }
+    }
+    return result;
+}
+console.log(coloanaVerticalaMediana(matrice2))
+
+
+function mijlocmatrice(arr){
+    let result = []
+    let m = arr.length 
+    if(m%2===1){
+        let index = (m -1) / 2
+        result.push(arr[index])
+        return result
+    }else{
+        return [arr[m/2],arr[m/2 -1 ]]
+    }
+}
+
+function nasdasd1(arr) {
+    let m = arr[0].length
+    let result = []
+    if (m % 2 == 1) {
+        let col = (m - 1) / 2
+        for (let i = 0; i < arr.length; i++) {
+            result.push(arr[i][col])
+        }
+    } else {
+        let col1 = m / 2 - 1
+        let col2 = m / 2
+        for (let i = 0; i < arr.length; i++) {
+            result.push(arr[i][col1], arr[i][col2])
+        }
+    }
+    return result
+}
+const matrice3 = [
+    [1,5,10,14],
+    [2,6,11,15],
+    [3,7,12,16],
+    [4,8,13,17]
+];
+console.log(nasdasd1(matrice3))
