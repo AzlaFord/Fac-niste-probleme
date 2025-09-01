@@ -603,7 +603,130 @@ function diagonalaPrinJos2(arr){
     }
     return result
 }
-
-
-
 console.log(diagonalaPrinJos2(matrice))
+
+function elementeasd(matrice){
+    let result = []
+    let k = 0
+    let j = matrice[0].length-1
+    while(j>=0){
+        result.push(matrice[k][j])
+        k++
+        j--
+    }
+    return result
+}
+
+console.log(elementeasd(matrice))
+
+function elementeasd2(matrice){
+    let result = []
+    let j = 0
+    let k = matrice[0].length -1
+    while(j<matrice.length){
+        for(let i = k-1; i>=0;i--){
+            result.push(matrice[j][i])
+        }
+        k--
+        j++
+    }
+    return result
+}
+
+console.log(elementeasd2(matrice))
+
+function subDiagonalaSecundara(arr) {
+    let result = []
+    let n = arr.length
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            if (i + j > n - 1) {
+                result.push(arr[i][j]);
+            }
+        }
+    }
+    return result;
+}
+console.log(subDiagonalaSecundara(matrice))
+function subDiagonalaSecundara2(arr) {
+    let result = []
+    let k = arr.length
+
+    for(let i = 0;i<k;i++){
+        for(let j = 0 ; j < k ;j++){
+            if(i+j < k-1){
+                result.push(arr[i][j])
+            }
+        }
+    }
+
+    return result;
+}
+console.log(subDiagonalaSecundara2(matrice))
+
+
+
+function subDiangoanSec(arr){
+    let result = []
+    let l = arr.length
+
+    for(let i = 0 ; i < l ;i++){
+        for(let j =0 ;j<l;j++){
+            if(i+j > l-1){
+                result.push(arr[i][j])
+            }
+        }
+    }
+    return result
+}
+
+
+
+console.log(subDiangoanSec(matrice))
+console.log(subDiangoanSec2(matrice))
+
+function subDiangoanSec2(arr){
+    let result = []
+    let l = arr.length
+    for(let i =0;i<l;i++){
+        for(let j=0;j<l;j++){
+            if (i+j > l-1){
+                result.push(arr[i][j])
+            }
+        }
+    }
+    return result
+}
+
+
+function subdiagoabnlasecudara(arr){
+    let l = arr.length
+    let result = []
+    for(let i = 0 ; i <l;i++){
+        for(let j = 0 ; j <l ;j++){
+            if(i+j>l-1){
+                result.push(arr[i][j])
+            }
+        }
+    }
+    return result
+}
+console.log(subdiagoabnlasecudara(matrice))
+
+function liniiMediane(arr) {
+    let n = arr.length;
+    if (n % 2 === 1) {
+        let idx = (n - 1) / 2;
+        return [arr[idx]];
+    } else {
+        return [arr[n / 2 - 1], arr[n / 2]];
+    }
+}
+const matrice2 = [
+                [1,2,3,4,5],
+                [6,7,8,9,10],
+                [11,12,13,14,15],
+                [16,17,18,19,20]]
+
+console.log(liniiMediane(matrice2))
