@@ -463,3 +463,147 @@ function multimi(arr,arr2){
     return result
 }
 console.log(multimi([2,3,1,7],[3,5,8,2,4,6]))
+
+function DiagonalaPrincipala(arr){
+    const arr2 =[]
+    for(let j= 0;j<arr[0].length;j++){
+        arr2[j] = arr[j][0+j]
+    }
+
+    return arr2
+}
+
+const matrice = [[1,2,3],[4,5,6],[7,8,9]]
+
+console.log(DiagonalaPrincipala(matrice))
+
+function DiagonalaPrin(arr){
+    let arr2 = []
+    for(let i = 0 ;i < arr[0].length;i++){
+        arr2[i] = arr[i][0+i]
+    }
+    return arr2
+}
+console.log(DiagonalaPrin(matrice))
+
+function diaginalaPr(arr){
+    let arr2 = []
+    for(let i = 0;i<arr[0].length;i++){
+        arr2[i] = arr[i][0+i]
+    }
+    return arr2
+}
+console.log(diaginalaPr(matrice))
+
+function diagonalaSec(arr){
+    let arr2 = []
+    let k =0
+    let j = arr[0].length-1
+    while (j>=0){
+        arr2[k]=arr[k][j]
+        k++
+        j--
+    }
+    return arr2
+}
+
+console.log(diagonalaSec(matrice))
+
+function diagonalaSec2(arr){
+    let i = 0
+    let k = arr.length-1
+    let arr2 = []
+    while(k>=0){
+        arr2[i] = arr[i][k]
+        i++
+        k--
+    }
+    return arr2
+}
+
+
+console.log(diagonalaSec2(matrice))
+
+function diagonalaSec3(arr){
+    let i = 0
+    let k=arr.length -1 
+    let arr2 = []
+    while(k>=0){
+        arr2[i] = arr[i][k]
+        k--
+        i++
+    }
+    return arr2
+}
+
+
+console.log(diagonalaSec3(matrice))
+
+
+function diagonalaPrinDe(arr){
+    let k = 0 
+    let result = []
+    let j = 0
+    while(k<arr.length){
+        for(let i = k+1;i<arr[0].length;i++ ){
+            result[j] = arr[k][i]
+            j++
+        }
+        k++
+    }
+    return result
+}
+
+console.log(diagonalaPrinDe(matrice))
+
+
+function diagonalaPrinDe2(arr){
+    let k = 0
+    let result = []
+    let j = 0
+    while ( k<arr.length){
+        for(let i = k+1;i<arr[0].length;i++){
+            result[j]=arr[k][i]
+            j++
+        }
+        k++
+    }
+    return result
+}
+
+console.log(diagonalaPrinDe2(matrice))
+
+function diagonalaPrinJos(arr){
+    let k = arr.length -1
+    let result = []
+    let j = 0
+    while (k>0){
+        for(let i = k -1;i>=0;i--){
+            result[j] = arr[k][i]
+            j++
+        }
+        k--
+    }
+    return result
+}
+
+console.log(diagonalaPrinJos(matrice))
+
+
+function diagonalaPrinJos2(arr){
+    let result = []
+    let k = arr[0].length -1 
+    let j = 0
+    while(k>=0){
+        for(let i = k-1;i>=0;i--){
+            result[j] = arr[k][i]
+            j++
+        }
+        k--
+    }
+    return result
+}
+
+
+
+console.log(diagonalaPrinJos2(matrice))
